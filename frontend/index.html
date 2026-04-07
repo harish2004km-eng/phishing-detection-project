@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HookHunter - AI Phishing Detection</title>
+    <!-- Link to our centralized styles -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts for better aesthetics -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">HookHunter</div>
+        <div class="nav-links">
+            <a href="index.html" class="active">Detector</a>
+            <a href="admin_login.html">Admin Dashboard</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="hero">
+            <h1>HookHunter System</h1>
+            <p>Select a mode below and enter any suspicious URL, Email, or SMS message to check its safety score.</p>
+        </div>
+
+        <div class="tabs-container">
+            <button class="tab-btn active" data-type="url">Web URL</button>
+            <button class="tab-btn" data-type="email">Email Content</button>
+            <button class="tab-btn" data-type="sms">SMS Message</button>
+        </div>
+
+        <div class="search-box">
+            <textarea id="contentInput" placeholder="Enter URL here (e.g., https://example.com)"></textarea>
+            <button id="checkBtn" class="btn-analyze">Analyze</button>
+        </div>
+
+        <!-- The results card, hidden by default -->
+        <div class="result-card hidden" id="resultCard">
+            <div class="score-circle" id="scoreCircle">
+                <span id="scoreValue">0</span>
+            </div>
+
+            <div class="result-details">
+                <h2>Classification: <span id="classificationText">Safe</span></h2>
+                <p>Analyzed Content: <span id="analyzedContent" class="text-muted">...</span></p>
+            </div>
+
+            <div id="reportActionBox" class="report-box hidden">
+                <p>Do you think this classification is incorrect? Help us improve!</p>
+                <button id="reportBtn" class="btn-report btn-block" style="margin-top: 1.5rem;">Report as
+                    Suspicious</button>
+            </div>
+
+            <!-- A place to show success/error messages for reporting -->
+            <p id="reportMessage" class="hidden"></p>
+        </div>
+    </main>
+
+    <!-- Reporter Details Modal -->
+    <div id="reporterModal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Submit Report Details</h2>
+                <button id="closeModalBtn" class="btn-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Please provide your contact details. This helps our team reach out to you if we need further
+                    information about this false classification.</p>
+
+                <div class="input-group">
+                    <label for="modalName">Full Name (Optional)</label>
+                    <input type="text" id="modalName" placeholder="John Doe">
+                </div>
+
+                <div class="input-group">
+                    <label for="modalEmail">Email Address (Optional)</label>
+                    <input type="email" id="modalEmail" placeholder="john@example.com">
+                </div>
+
+                <div class="input-group">
+                    <label for="modalPhone">Phone Number (Optional)</label>
+                    <input type="tel" id="modalPhone" placeholder="+1234567890">
+                </div>
+
+                <button id="submitReportBtn" class="btn-analyze btn-block" style="margin-top: 1rem;">Confirm & Submit
+                    Report</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

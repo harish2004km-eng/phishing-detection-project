@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - HookHunter</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">HookHunter</div>
+        <div class="nav-links">
+            <a href="index.html">Detector</a>
+            <a href="admin_login.html" class="active">Admin Dashboard</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="login-card">
+            <h2>Admin Passcode</h2>
+            <p class="text-muted">Enter your secure PIN to access the dashboard</p>
+            
+            <form id="loginForm">
+                <div class="input-group" id="pinGroup">
+                    <label for="pinCode">Secure PIN</label>
+                    <input type="password" id="pinCode" placeholder="Enter PIN" required>
+                </div>
+
+
+
+                <div id="loginError" class="login-error hidden">Invalid PIN passcode.</div>
+                
+                <button type="submit" id="loginBtn" class="btn-block">Access Dashboard</button>
+            </form>
+
+
+        </div>
+    </main>
+
+    <script src="admin_login.js"></script>
+</body>
+</html>

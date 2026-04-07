@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Admin PIN - HookHunter</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">HookHunter</div>
+        <div class="nav-links">
+            <a href="index.html">Detector</a>
+            <a href="admin_login.html" class="active">Admin Dashboard</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="login-card">
+            <h2>Create Admin Passcode</h2>
+            <p class="text-muted">Register your secure PIN to access the dashboard</p>
+            
+            <div id="registerError" class="login-error hidden"></div>
+
+            <!-- SINGLE REGISTRATION FORM -->
+            <form id="registerForm">
+                <div class="input-group">
+                    <label for="adminEmail">Email Address</label>
+                    <input type="email" id="adminEmail" placeholder="yourname@gmail.com" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="newPin">Create a New Passcode (PIN)</label>
+                    <input type="password" id="newPin" placeholder="Enter highly secure PIN" required>
+                </div>
+                
+                <button type="submit" id="registerBtn" class="btn-block">Confirm Setup</button>
+            </form>
+
+            <div style="margin-top: 1.5rem; font-size: 0.9rem;">
+                <a href="admin_login.html" style="color: var(--primary-color); text-decoration: none;">&larr; Back to Login</a>
+            </div>
+        </div>
+    </main>
+
+    <script src="admin_register.js"></script>
+</body>
+</html>

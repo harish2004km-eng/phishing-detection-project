@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - HookHunter</title>
+    <link rel="stylesheet" href="styles.css?v=3">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">HookHunter</div>
+        <div class="nav-links">
+            <a href="index.html">Detector</a>
+            <a href="admin.html" class="active">Admin Dashboard</a>
+            <button id="logoutBtn" class="btn-logout">Logout</button>
+        </div>
+    </nav>
+
+    <main class="container admin-container">
+        <div class="hero">
+            <h1>Admin Dashboard</h1>
+            <p>Manage and review reported URLs from users</p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>Total Reports</h3>
+                <h2 id="totalCount">...</h2>
+            </div>
+            <div class="stat-card stat-pending">
+                <h3>Pending reports</h3>
+                <h2 id="pendingCount">...</h2>
+            </div>
+            <div class="stat-card stat-resolved">
+                <h3>Resolved reports</h3>
+                <h2 id="resolvedCount">...</h2>
+            </div>
+        </div>
+
+        <div class="dashboard-body">
+            <!-- New Chart Section -->
+            <div class="chart-wrapper">
+                <h3>Threats by Category</h3>
+                <div style="position: relative; height: 250px; width: 100%;">
+                    <canvas id="threatChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Existing Table Section -->
+            <div class="table-container">
+                <table class="reports-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Type</th>
+                        <th>Content</th>
+                        <th>Reporter</th>
+                        <th>Status</th>
+                        <th>Date Reported</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="reportsTableBody">
+                    <!-- Rows will be injected by JavaScript -->
+                </tbody>
+            </table>
+            </div>
+        </div>
+    </main>
+
+    <script src="admin.js?v=5"></script>
+</body>
+</html>
